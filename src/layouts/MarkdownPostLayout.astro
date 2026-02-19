@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import {getPathWithBase} from "../utils/path.ts";
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
@@ -12,7 +13,7 @@ const { frontmatter } = Astro.props;
 
     <div class="tags">
         {frontmatter.tags.map((tag: string) => (
-                <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                <p class="tag"><a href={getPathWithBase(`/tags/${tag}`)}>{tag}</a></p>
         ))}
     </div>
 
