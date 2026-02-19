@@ -1,10 +1,11 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
     const pageTitle = "About Me";
     const identity = {
-        firstName: "Sarah",
-        country: "Canada",
+        firstName: "Junaid",
+        country: "Hossain",
         occupation: "Technical Writer",
         hobbies: ["photography", "birdwatching", "baseball"],
     };
@@ -20,6 +21,7 @@ import Footer from '../components/Footer.astro';
 <body>
 <Navigation />
 <h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
 <h2>... and my new Astro site!</h2>
 
 <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
@@ -38,6 +40,6 @@ import Footer from '../components/Footer.astro';
 <ul>
     {skills.map((skill) => <li>{skill}</li>)}
 </ul>
-<Footer />
+</BaseLayout>
 </body>
 </html>
